@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet var celsiusField: UILabel!;
+    @IBAction func farFieldChange(_ sender: UITextField){
+        celsiusField.text = sender.text;
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
