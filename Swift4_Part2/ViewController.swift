@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
+    @IBOutlet var farField: UITextField!;
     @IBOutlet var celsiusField: UILabel!;
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        celsiusField.text = "--";
+    }
     @IBAction func farFieldChange(_ sender: UITextField){
         if let text = sender.text, !text.isEmpty {
             celsiusField.text = sender.text;
@@ -19,11 +23,9 @@ class ViewController: UIViewController {
             celsiusField.text = "--";
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        celsiusField.text = "--";
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer){
+        farField.resignFirstResponder();
     }
-
 
 }
 
