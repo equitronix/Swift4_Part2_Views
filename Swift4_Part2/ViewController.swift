@@ -13,15 +13,15 @@ class ViewController: UIViewController {
     
     @IBOutlet var celsiusField: UILabel!;
     @IBAction func farFieldChange(_ sender: UITextField){
-        celsiusField.text = sender.text;
+        if let text = sender.text, !text.isEmpty {
+            celsiusField.text = sender.text;
+        }else{
+            celsiusField.text = "--";
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        
-        
+        celsiusField.text = "--";
     }
 
 
