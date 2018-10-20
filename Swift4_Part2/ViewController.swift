@@ -12,19 +12,42 @@ class ViewController: UIViewController {
 
     @IBOutlet var farField: UITextField!;
     @IBOutlet var celsiusField: UILabel!;
+    
+    private var farValue: Measurement<UnitTemperature>?{
+        didSet{
+            updateCelius();
+        }
+    };
+    private var celValue: Measurement<UnitTemperature>?{
+        if let farValue = farValue {
+            return farValue.converted(to: .celsius)
+        }else{
+            return nil;
+        }
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        celsiusField.text = "--";
+        updateCelius()
     }
     @IBAction func farFieldChange(_ sender: UITextField){
-        if let text = sender.text, !text.isEmpty {
-            celsiusField.text = sender.text;
+        if let text = sender.text, !text.isEmpty, let val = Double(text) {
+            farValue = Measurement(value: val, unit: .fahrenheit);
         }else{
-            celsiusField.text = "--";
+            farValue = nil;
         }
     }
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer){
         farField.resignFirstResponder();
+    }
+    private func updateCelius(){
+        if let celValue = celValue {
+            celsiusField.text = "\(celValue)";
+        }else{
+            celsiusField.text = "--";
+        }
+    
     }
 
 }
