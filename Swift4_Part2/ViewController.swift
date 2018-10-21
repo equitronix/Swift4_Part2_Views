@@ -39,6 +39,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateCelius()
         farField.delegate = self;
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let hr = Calendar.current.component(.hour, from: Date());
+        if (6...18).contains(hr){
+            view.backgroundColor = UIColor.lightGray;
+        }else{
+            view.backgroundColor = UIColor.darkGray
+        }
+        
+    }
     @IBAction func farFieldChange(_ sender: UITextField){
         if let text = sender.text, !text.isEmpty, let val = Double(text) {
             farValue = Measurement(value: val, unit: .fahrenheit);
