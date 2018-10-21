@@ -93,11 +93,7 @@
         <!--Map-->
         <scene sceneID="FeM-Pk-jZ6">
             <objects>
-                <viewController id="TyD-Q2-e0D" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="haa-rz-nzi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
+                <viewController id="TyD-Q2-e0D" customClass="MapViewController" customModule="Swift4_Part2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="logo design equitronix 20x20 copy" selectedImage="logo design equitronix 20x20 copy" id="a2H-ez-ooP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wki-wr-a5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
