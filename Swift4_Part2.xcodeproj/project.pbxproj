@@ -14,6 +14,7 @@
 		840DF2E12178B6B3006520DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840DF2DF2178B6B3006520DB /* LaunchScreen.storyboard */; };
 		840DF2EC2178B6B3006520DB /* Swift4_Part2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF2EB2178B6B3006520DB /* Swift4_Part2Tests.swift */; };
 		840DF2F72178B6B3006520DB /* Swift4_Part2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF2F62178B6B3006520DB /* Swift4_Part2UITests.swift */; };
+		842B7EF9217C5B0200F27411 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842B7EF8217C5B0200F27411 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		840DF2F22178B6B3006520DB /* Swift4_Part2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift4_Part2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840DF2F62178B6B3006520DB /* Swift4_Part2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift4_Part2UITests.swift; sourceTree = "<group>"; };
 		840DF2F82178B6B3006520DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842B7EF8217C5B0200F27411 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842B7EF9217C5B0200F27411 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				840DF2EA2178B6B3006520DB /* Swift4_Part2Tests */,
 				840DF2F52178B6B3006520DB /* Swift4_Part2UITests */,
 				840DF2D42178B6B0006520DB /* Products */,
+				842B7EF7217C5B0200F27411 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				840DF2F82178B6B3006520DB /* Info.plist */,
 			);
 			path = Swift4_Part2UITests;
+			sourceTree = "<group>";
+		};
+		842B7EF7217C5B0200F27411 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				842B7EF8217C5B0200F27411 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
