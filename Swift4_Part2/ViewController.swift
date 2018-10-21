@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var farField: UITextField!;
     @IBOutlet var celsiusField: UILabel!;
@@ -26,10 +26,18 @@ class ViewController: UIViewController {
         }
     }
     
+    private let nf: NumberFormatter = {
+        let nf = NumberFormatter();
+        nf.numberStyle = .decimal
+        nf.minimumFractionDigits = 1;
+        nf.maximumFractionDigits = 1;
+        return nf;
+    }();
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateCelius()
+        farField.delegate = self;
     }
     @IBAction func farFieldChange(_ sender: UITextField){
         if let text = sender.text, !text.isEmpty, let val = Double(text) {
@@ -43,11 +51,29 @@ class ViewController: UIViewController {
     }
     private func updateCelius(){
         if let celValue = celValue {
-            celsiusField.text = "\(celValue)";
+            celsiusField.text = nf.string(from: NSNumber(value: celValue.value));
         }else{
             celsiusField.text = "--";
         }
     
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var retVal = true;
+        if !NSCharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string)) {
+            retVal = false;
+        }
+        if retVal, let text = farField.text {
+            if text.contains(".") {
+                if string.contains("."){
+                    retVal = false;
+                }
+                
+            }
+        }
+        
+        
+        return retVal;
     }
 
 }
